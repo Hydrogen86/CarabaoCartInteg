@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="../images/logo.png">
+    <title>Home - CarabaoCart</title>
+    <style>
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f3f3f3;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo h2 {
+            margin-left: 10px;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+        .navbar a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #002868;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            padding: -7px;
+        }
+        .search input {
+            border: none;
+            outline: none;
+            width: 200px;
+            padding: 5px;
+            margin-left: 5px;
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+        .icons a {
+            text-decoration: none;
+            color: #002868;
+            margin-right: 10px;
+        }
+        .icons i {
+            font-size: 24px;
+        }
+        /* banner */
+        .main-content .banner{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: azure;
+            color: #fff;
+            width: 1200px;
+            height: 35rem;
+            background: url(../images/bbanner.png) no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin: 3rem 0;
+        }
+
+        .banner .enroll{
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            margin-left: 7rem;
+            gap: 1rem;
+            height: fit-content;
+        }
+
+        .banner .enroll h1{
+            color: var(--accent-color);
+            font-size: 4rem;
+        }
+        .banner .enroll p{
+            position: relative;
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 0 2rem;
+        }
+        .banner .enroll p::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: .4rem;
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: var(--border-radius);
+        }
+        .banner .enroll a{
+            background-color: var(--accent-color);
+            backdrop-filter: blur(10px);
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            width: fit-content;
+            padding: 1rem 3rem;
+            color: var(--text-color);
+            font-weight: 600;
+            border-radius: 0 10rem 10rem 10rem;
+            transition: var(--transition);
+        }
+        .banner .enroll a:hover{
+            color: var(--text-color);
+            background-color: #fff;
+            border-radius: 10rem;
+            transform: scale(1.1);
+            box-shadow: 0 11.5px 26.5px 0 rgba(0, 0, 0, 0.39);
+        }
+        /* Team Section */
+.team-section {
+    margin-top: 100px; /* Adjust as needed */
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-member {
+    width: 200px; /* Adjust as needed */
+}
+
+.team-member img {
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+}
+
+.team-member h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #002868;
+}
+
+.team-member h4 {
+    margin-top: 10px;
+    font-size: 15px;
+    color: black;
+    font-weight: -1px;
+}
+/* Team Banner Section */
+.team-banner {
+    background-image: url("../images/banner3.png"); /* Update the path */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0; /* Adjust padding as needed */
+    border-radius: var(--border-radius);
+}
+
+/* Remove the duplicate styles for .team-container and .team-member */
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-member {
+    width: 200px; /* Adjust as needed */
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px; /* Adjust as needed */
+    height: 150px; /* Adjust as needed */
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+}
+
+.team-member h1 {
+    margin-top: 10px;
+    font-size: 20px;
+    color:  #FBD420;
+}
+
+.team-member h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color:  #FBD420;
+}
+
+.team-member h4 {
+    margin-top: 10px;
+    font-size: 15px;
+    color:  white;
+    font-weight: normal;
+}
+
+.highlight {
+    background-color: yellow;
+}
+    </style>
+</head>
+<body>
+    <!-- Heading -->
+    <div class="heading">
+        <!-- logo -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="../images/logo.png" alt="">
+                <h2>Carabao<br>Cart</h2>
+            </a>
+        </div>
+        <!-- Nav Bar -->
+        <div class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="products.html">Products</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="search">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" id="searchInput" placeholder="Search">
+            <div class="icons">
+                <a href="../Login/login.html"><i class='bx bx-user'></i></a> <!-- Profile icon -->
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+
+    <div class="main-content">
+        <div class="welcome">
+            <h1><span style="color: #002868;">Welcome to</span>
+                <span class="highlight"></span>
+                 <span style="color: #002868;">CarabaoCart</span><br><br>
+            </h1>
+
+            <p>Your one-stop destination for all things dairy! At CarabaoCart, we take pride in offering a wide range of high-quality dairy products, sourced from trusted suppliers and delivered right to your doorstep. From creamy milk and flavorful cheeses to rich yogurts and indulgent desserts, we've got everything you need to satisfy your dairy cravings. Browse through our extensive selection of products, carefully curated to cater to every taste and preference. Whether you're looking for organic options, lactose-free alternatives, or artisanal delights, you'll find it all here at CarabaoCart. Our user-friendly website makes it easy to explore our offerings, place orders with just a few clicks, and enjoy hassle-free delivery straight to your home or office. Plus, with our secure payment options and reliable customer service, shopping for dairy has never been more convenient. Join the CarabaoCart community today and discover the joy of quality dairy products delivered with convenience and care. Let us be your trusted partner in elevating your culinary experiences with the goodness of dairy, every step of the way. Happy shopping!
+            </p>
+        </div>
+        <br><br>
+
+        <div class="banner">
+            <div class="enroll">
+                <h1>GET BINI-FIED!</h1>
+                <p>Satisfy your cravings in a click! <br>Indulge in dairy delights delivered<br>
+                straight to your door.<br>
+                </p>
+                <a href="products.html">Order Now!</a>
+            </div>
+        </div>
+
+        <p>Indulge in a symphony of flavors and textures as you explore our extensive selection of premium dairy products. From farm-fresh milk to artisanal cheeses, velvety yogurts, and decadent desserts, we've curated a delightful array to cater to every palate. At CarabaoCart, we believe in quality without compromise. That's why we partner with reputable suppliers who share our commitment to excellence, ensuring that every product we offer meets the highest standards of freshness and flavor. Navigating our user-friendly website is a breeze, allowing you to browse, select, and order your favorite dairy essentials with ease. With swift and reliable delivery straight to your doorstep, enjoying the goodness of dairy has never been more convenient. Whether you're whipping up a gourmet meal, preparing a wholesome snack, or simply craving a creamy treat, CarabaoCart has everything you need to elevate your culinary creations. Join us on a journey of gastronomic delight and discover the true essence of dairy perfection. Your taste buds deserve nothing less.
+        <br>
+        <br><br>
+        </p>
+
+        <div class="banner" style="background-image: url(../images/banner2.png);">
+            <div class="enroll">
+                <h1>BI-NI ONE</h1>  
+                <p>Partner with us to redefine <br>milk production! Let's innovate <br>together for fresher, healthier <br>options and sustainable <br>solutions.</p>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+
+        <h1><span style="color: #002868;">Mission</span>
+            <p>At Carabao Cart, our mission is to revolutionize the beverage industry by providing not only delicious and refreshing drinks but also by promoting sustainable practices and community engagement. We strive to offer convenient access to high-quality beverages while prioritizing the well-being of our customers and the planet. Through our commitment to innovation and excellence, we aim to create a positive impact on both local communities and the environment.</p>
+            <br><h1><span style="color: #002868;">Vision</span>
+                <p>Our vision at Carabao Cart is to be recognized as the foremost leader in the beverage industry, setting new standards for quality, sustainability, and social responsibility. We aspire to transform the way people think about and consume beverages, making healthier choices more accessible and enjoyable for everyone. By harnessing the power of our iconic Carabao Cart, we envision a future where every sip brings joy, nourishment, and a sense of connection to our planet and communities.</p>
+                <br>
+
+<!-- Team Banner Section -->
+
+<div class="team-banner">
+    <br> <br> 
+    <div class="team-container">
+        <div class="team-member">
+            <a href="https://www.facebook.com/pascual.wilmer?mibextid=LQQJ4d">
+                <img src="../images/img-1.jpg" alt="Developer 5">
+            </a>
+            <h3>Wilmer Pascual</h3>
+            <h4>Chief Executive <br>Officer & Owner</h4>
+        </div>
+        <!-- Developer 1 -->
+        <div class="team-member">
+            <a href="https://www.facebook.com/pickl.piee?mibextid=LQQJ4d">
+                <img src="../images/img-2.jpg" alt="Developer 1">
+            </a>
+            <h3>Elpie Landoy</h3>
+            <h4>Full Stack Developer & UX/UI Designer</h4>
+        </div>
+       
+    <!-- Developer 2 -->
+    <div class="team-member">
+        <a href="https://www.facebook.com/profile.php?id=100008716215080&mibextid=LQQJ4d">
+            <img src="../images/img-32.jpg" alt="Developer 2">
+        </a>
+        <h3>Robert Magno</h3>
+        <h4>Database Administrator</h4>
+    </div>
+    <!-- Developer 3 -->
+    <div class="team-member">
+        <a href="https://www.facebook.com/Crimson718?mibextid=LQQJ4d">
+            <img src="../images/img-4.jpg" alt="Developer 3">
+        </a>
+        <h3>Dominique Loto</h3>
+        <h4>Technical Writer</h4>
+    </div>
+    <!-- Developer 4 -->
+    <div class="team-member">
+        <a href="https://www.facebook.com/johnjoebertbermudez?mibextid=LQQJ4d">
+            <img src="../images/img-5.jpg" alt="Developer 4">
+        </a>
+        <h3>Jay Bermudez</h3>
+        <h4>Data Analyst</h4>
+    </div>
+</div>
+    </div>
+</section>
+<br>
+
+<p> Wilmer Pascual, the Chief Executive Officer & Owner of CarabaoCart, leads the team with a blend of visionary thinking and strong business acumen. Elpie Landoy, the Full Stack Developer & UX/UI Designer at CarabaoCart, brings versatility to the table, seamlessly blending technical expertise with a keen eye for design. Robert Magno, as the Database Administrator at CarabaoCart, ensures the backbone of their applications remains robust and efficient. Dominique Loto, the Technical Writer at CarabaoCart, meticulously documents every technical aspect, ensuring clarity and coherence. Jay Bermudez, the Data Analyst at CarabaoCart, transforms raw data into actionable insights, driving informed decisions and optimizations across projects. Together, this diverse team at CarabaoCart combines their skills and expertise to deliver innovative solutions and drive the company forward in revolutionizing e-commerce in the Philippines.</p>
+<br><br><br>
+
+<script>
+    function searchAndHighlight(searchTerm, selector) {
+    if (searchTerm) {
+        var selectorElements = document.querySelectorAll(selector);
+        for (var i = 0; i < selectorElements.length; i++) {
+            var innerHTML = selectorElements[i].innerHTML;
+            var index = innerHTML.toLowerCase().indexOf(searchTerm.toLowerCase());
+            while (index >= 0) {
+                var before = innerHTML.charAt(index - 1);
+                var after = innerHTML.charAt(index + searchTerm.length);
+                if ((before === undefined || before === ' ' || before === '>') && (after === undefined || after === ' ' || after === '<')) {
+                    var highlightedText = innerHTML.substring(index, index + searchTerm.length);
+                    innerHTML = innerHTML.substring(0, index) + "<span class='highlight'>" + highlightedText + "</span>" + innerHTML.substring(index + searchTerm.length);
+                    index = innerHTML.toLowerCase().indexOf(searchTerm.toLowerCase(), index + searchTerm.length + 31);
+                } else {
+                    index = innerHTML.toLowerCase().indexOf(searchTerm.toLowerCase(), index + 1);
+                }
+            }
+            selectorElements[i].innerHTML = innerHTML;
+        }
+    }
+}
+
+
+    document.getElementById("searchInput").addEventListener("input", function() {
+        var searchTerm = this.value.trim();
+        if (searchTerm.length > 0) {
+            var elementsToSearch = [".welcome p", ".banner .enroll p", ".team-banner p", ".team-banner h1", ".team-banner h3", ".team-banner h4", ".main-content h1", ".main-content p", ".main-content h1 + p", ".main-content h1 + p + p"]; // Included selector for the mission paragraph
+            elementsToSearch.forEach(function(selector) {
+                searchAndHighlight(searchTerm, selector);
+            });
+        } else {
+            var highlightedElements = document.querySelectorAll(".highlight");
+            highlightedElements.forEach(function(element) {
+                element.outerHTML = element.innerHTML;
+            });
+        }
+    });
+</script>
+
+
+
+
+</body>
+</html>

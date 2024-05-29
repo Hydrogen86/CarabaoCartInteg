@@ -1,0 +1,211 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    background-color: #f0f0f0; /* Optional: for better visibility */
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+}
+
+.back-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.admin-pic {
+    width: 350px;
+    margin-right: -20px; /* Space between image and form */
+    margin-left: -25%;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    z-index: 1;
+}
+
+.wrapper {
+    width: 400px;
+    padding: 35px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 4px rgba(3, 39, 102, 0.08);
+    overflow-y: auto; /* Allow scrolling if the form overflows */
+    max-height: 100vh; /* Ensure the wrapper does not exceed the viewport height */
+    margin-left: 0 auto;
+}
+
+.wrapper .mainLogo {
+    margin-top: 40px;
+    color: #283A8C;
+}
+
+.wrapper .mainLogo h1 {
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .logo {
+    width: 120px;
+}
+
+.wrapper .input-box {
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    border-radius: 25px;
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 20px 45px 20px 20px;
+    outline: none;
+    border: 2px solid #ECEEF6;
+    transition: 0.5s;
+}
+
+.input-box i {
+    position: absolute;
+    font-size: 20px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.wrapper .remember-forgot {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.remember-forgot a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #283A8C;
+    transition: 0.5s;
+}
+
+.remember-forgot a:hover::after {
+    width: 100%;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #E9EBF1;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+}
+
+.wrapper .btn:hover {
+    color: #fff;
+    background: #283A8C;
+}
+
+.input-box input:hover,
+.input-box input:focus,
+.input-box input:active {
+    border: 2.5px solid #283A8C;
+    box-shadow: 0px 0px 40px 4px rgba(3, 39, 102, 0.2);
+    transition: 1s;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1001;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal .input-box {
+    margin: 10px 0;
+}
+
+.modal .btn {
+    background-color: #E9EBF1;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.modal .btn:hover {
+    background-color: #283A8C;
+    color: #fff;
+}

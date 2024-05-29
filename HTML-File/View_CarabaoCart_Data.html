@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS-File/design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="../Images/logo.png">
+    <title>Messages - CarabaoCart</title>
+    <style>
+        .heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f3f3f3;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo h2 {
+            margin-left: 10px;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+        .navbar a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            padding: -7px;
+        }
+        .search input {
+            border: none;
+            outline: none;
+            width: 200px;
+            padding: 5px;
+            margin-left: 5px;
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+        .icons a {
+            text-decoration: none;
+            color: black;
+            margin-right: 10px;
+        }
+        .icons i {
+            font-size: 24px;
+        }
+        .contact-C {
+            text-align: left; /* Align contact form to the left */
+            margin-right: 20px; /* Add some margin to the right */
+        }
+        .contact-C h2 {
+            margin-left: 30px;
+        }
+        .contact-C .contact-us-messages {
+            padding: 20px;
+            max-width: 400px;
+            border: 1.5px solid rgb(70, 70, 70);
+            border-radius: 20px;
+        }
+        .contact-C .contact-us-messages .message-text{
+            padding: 5px;
+            background-color: rgb(185, 218, 229);
+            border-radius: 10px;
+        }
+        .contact-C .contact-us-messages .message:hover {
+            cursor: pointer;
+        }
+        .map-container {
+            width: 60%; /* Adjust map container width */
+            height: 520px; /* Adjust map container height */
+            margin-top: 8%; /* Add margin to the top */
+            border-radius: 15px; /* Add border radius */
+            overflow: hidden; /* Ensure content does not overflow rounded corners */
+            margin-left: 700px;
+            position: fixed;
+        }
+
+        .map {
+            position: relative;
+            padding-bottom: 75%; /* Aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .map iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Heading -->
+    <div class="heading">
+        <!-- logo -->
+        <div class="logo">
+            <a href="#">
+                <img src="../images/logo.png" alt="">
+                <h2>Carabao<br>Cart</h2>
+            </a>
+        </div>
+        <!-- Nav Bar -->
+        <div class="navbar">
+            <a href="View_Data.php" class="active" target="_self">Home</a>
+            <a href="#" target="_self">Deposit</a>
+            <a href="#" target="_self" >Inventory</a>
+        </div>
+
+        <div class="search">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" placeholder="Search">
+            <div class="icons">
+                <a href="../../CarabaoCart/PHP-File/View_CarabaoCart_Data.php"><i class='bx bx-package'></i></a>
+                <a href="../index.html"><i class='bx bx-store'></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- contact -->
+    <br><br><br><br>
+    <div class="contact-C">
+        
+    </div>
+</body>
+</html>

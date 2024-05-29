@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center; /* horizontally center */
+    align-items: center; /* vertically center */
+    height: 100vh; /* or any other height */
+    background-color: seagreen; /* Background color of the page */
+}
+
+.main-container {
+    width: 300px; /* Width of your main container */
+    background-color: rgba(255, 255, 255, 0.89);
+    backdrop-filter: blur(15px);
+    padding: 20px; /* Optional: Add padding for spacing */
+    border-radius: 10px;
+}
+.main-container h2 {
+    text-align: center;
+}
+.main-container form label {
+    text-align: left;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.main-container form .container-box .input-box {
+    margin: 0;
+    width: 100%;
+    height: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1.5px solid grey;
+}
+.main-container form .submit-btn{
+    margin-top: 15px;
+    font-weight: bolder;
+    float: right;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1.5px solid grey;
+}
+.generate-rand-num {
+    border-radius: 20px;
+    margin-top: 3px;
+    float: right;
+    font-weight: 400;
+    border: 1.5px solid grey;
+    cursor: pointer;
+}

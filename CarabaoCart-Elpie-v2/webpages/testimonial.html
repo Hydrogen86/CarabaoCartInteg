@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="../images/logo.png">
+    <title>Testimonials - CarabaoCart</title>
+    <style>
+/* Your existing CSS styles */
+.heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f3f3f3;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo h2 {
+            margin-left: 10px;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+        .navbar a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #002868;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            padding: -7px;
+        }
+        .search input {
+            border: none;
+            outline: none;
+            width: 200px;
+            padding: 5px;
+            margin-left: 5px;
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+        .icons a {
+            text-decoration: none;
+            color: #002868;
+            margin-right: 10px;
+        }
+        .icons i {
+            font-size: 24px;
+        }
+/* Banner */
+.main-content .banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    max-height: 600px;
+}
+
+.banner .slider {
+    width: 1500px;
+    height: 100%;
+    display: flex;
+    transition: opacity 0.5s ease-in-out; /* Add this */
+}
+
+.banner .slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out; /* Add this */
+}
+
+
+/* Buttons */
+.buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: #000;
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+}
+
+.buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+/* Your other CSS styles */
+
+    </style>
+</head>
+<body>
+    <!-- Heading -->
+    <div class="heading">
+        <!-- logo -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="../images/logo.png" alt="">
+                <h2>Carabao<br>Cart</h2>
+            </a>
+        </div>
+        <!-- Nav Bar -->
+        <div class="navbar">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="testimonial.html"class="active">Testimonials</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="search">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" placeholder="Search">
+            <div class="icons">
+                <a href="../Login/login.html"><i class='bx bx-user'></i></a> <!-- Profile icon -->
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <br><br>
+        <div class="banner">
+            <!-- Slider -->
+            <div class="slider">
+                <img src="images/t1.jpg" alt="Banner 1">
+            </div>
+            <!-- Buttons -->
+            <div class="buttons">
+                <button id="prevBtn">&lt;</button>
+                <button id="nextBtn">&gt;</button>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+    
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const imageUrls = [
+                "images/t1.jpg",
+                "images/t2.jpg",
+                "images/t3.jpg"
+            ];
+            let currentImageIndex = 0;
+            const slider = document.querySelector(".banner .slider");
+    
+            // Preload images
+            imageUrls.forEach(url => {
+                const img = new Image();
+                img.src = url;
+            });
+    
+            function showImage(index) {
+                const currentImage = slider.querySelector('img');
+                const newImage = document.createElement('img');
+                newImage.src = imageUrls[index];
+                newImage.alt = "Banner";
+                newImage.style.position = "absolute";
+                newImage.style.top = "0";
+                newImage.style.left = "0";
+                newImage.style.width = "100%";
+                newImage.style.height = "100%";
+                newImage.style.opacity = "0";
+                slider.appendChild(newImage);
+    
+                setTimeout(() => {
+                    newImage.style.opacity = "1";
+                    currentImage.style.opacity = "0";
+                }, 10); // Slight delay to ensure transition
+    
+                setTimeout(() => {
+                    slider.removeChild(currentImage);
+                    newImage.style.position = "static";
+                }, 500); // Duration of the transition
+            }
+    
+            function showPreviousImage() {
+                currentImageIndex = (currentImageIndex - 1 + imageUrls.length) % imageUrls.length;
+                showImage(currentImageIndex);
+            }
+    
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+                showImage(currentImageIndex);
+            }
+    
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            prevBtn.addEventListener("click", showPreviousImage);
+            nextBtn.addEventListener("click", showNextImage);
+    
+
+        });
+    </script>
+    
+
+    <!-- Your existing scripts and links -->
+
+</body>
+</html>

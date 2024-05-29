@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<stockData>
+  <Product name="Fresh Milk" price="160" stock="0"/>
+  <Product name="Strawberry Milk" price="160" stock="0"/>
+  <Product name="Chocolate Milk" price="160" stock="0"/>
+  <Product name="Ice Cream" price="100" stock="0"/>
+  <Product name="Yogurt" price="100" stock="0"/>
+  <Product name="Milk Cheese" price="100" stock="0"/>
+  <Product name="Cookies" price="100" stock="0"/>
+  <Product name="Protein Bar" price="50" stock="0"/>
+</stockData>

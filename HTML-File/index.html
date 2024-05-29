@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS-File/style.css">
+    <script src="../JS-File/script.js"></script>
+    <title>User Information</title>
+</head>
+<body>
+    <div class="main-container">
+        <form action="../PHP-File/Save_CarabaoCart_Data.php" method="post">
+            <h2>Employee Information:</h2>
+            <div class="container-box">
+                <label for="userID">I.D</label><br>
+                <input type="number" id="userID" name="userID" class="input-box" placeholder="Click to generate ID" required><br>
+                <button class="generate-rand-num" onclick="generateRandomIdAndSet()">Generate Random ID</button><br>
+
+                <label for="name">Name:</label><br>
+                <input type="text"id="name" name="name" class="input-box" placeholder="First name & Last name" required><br>
+
+                <label for="carabao-count">Carabao:</label><br>
+                <input type="number"id="carabao-count" name="carabao-count" class="input-box" placeholder="Number of Carabaos" required><br>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

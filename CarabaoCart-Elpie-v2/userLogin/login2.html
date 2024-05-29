@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCC Login & Signup</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 400px;
+            padding: 60px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            margin-bottom: 30px;
+            font-size: 24px;
+            text-align: center;
+            color: #1b276d;
+        }
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-box input, .input-box textarea {
+            width: 400px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            margin-left: -10px;
+            border-radius: 10px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .input-box input:focus, .input-box textarea:focus {
+            border-color: #283A8C;
+        }
+        .input-box i {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #ccc;
+            font-size: 20px;
+        }
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #283A8C;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background-color: #1b276d;
+        }
+        .toggle-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .toggle-link a {
+            color: #283A8C;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .toggle-link a:hover {
+            text-decoration: underline;
+        }
+        .hidden {
+            display: none;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <form id="loginForm">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" id="username" placeholder="Username" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <i class='bx bx-lock' id="togglePassword"></i>
+            </div>
+            <button type="submit" class="btn">Log in</button>
+        </form>
+        <div class="toggle-link">
+            Don't have an account? <a href="#" id="showSignupForm">Sign up</a>
+        </div>
+    </div>
+
+    <div class="container hidden" id="signupContainer">
+        <form id="signupForm">
+            <h1>Sign Up</h1>
+            <div class="input-box">
+                <input type="text" id="signupName" placeholder="Full Name" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <i class='bx bx-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="signupUsername" placeholder="Username" required>
+                <i class='bx bx-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <i class='bx bx-lock'></i>
+            </div>
+            <div class="input-box">
+                <textarea id="signupAddress" placeholder="Address" required></textarea>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <div class="toggle-link">
+            Already have an account? <a href="#" id="showLoginForm">Log in</a>
+        </div>
+    </div>
+
+    <script>
+        // Show/Hide forms
+        document.getElementById('showSignupForm').addEventListener('click', function() {
+            document.getElementById('loginContainer').classList.add('hidden');
+            document.getElementById('signupContainer').classList.remove('hidden');
+        });
+
+        document.getElementById('showLoginForm').addEventListener('click', function() {
+            document.getElementById('signupContainer').classList.add('hidden');
+            document.getElementById('loginContainer').classList.remove('hidden');
+        });
+
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const storedUser = localStorage.getItem(username);
+            if (storedUser) {
+                const user = JSON.parse(storedUser);
+                if (user.password === password) {
+                    sessionStorage.setItem('loggedInUser', username);
+                    window.location.href = '../webpages/productThree.php';
+                } else {
+                    alert('Invalid username or password');
+                }
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+
+        // Signup form submission
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const username = document.getElementById('signupUsername').value;
+            const password = document.getElementById('signupPassword').value;
+            const address = document.getElementById('signupAddress').value;
+
+            const user = {
+                name: name,
+                email: email,
+                username: username,
+                password: password,
+                address: address
+            };
+
+            localStorage.setItem(username, JSON.stringify(user));
+            alert('Sign up successful! You can now log in.');
+            document.getElementById('signupContainer').classList.add('hidden');
+            document.getElementById('loginContainer').classList.remove('hidden');
+        });
+
+        // Password toggle
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.classList.toggle('bx-show');
+        });
+    </script>
+</body>
+</html>
